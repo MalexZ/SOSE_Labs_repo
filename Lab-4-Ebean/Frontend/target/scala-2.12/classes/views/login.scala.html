@@ -1,0 +1,83 @@
+@(authorizeMessage: String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Lab 4 - Find best workflow
+        </title>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+
+    </head>
+    <body>
+
+        <header class="topbar">
+            <h1 class="focused" style="font-size: 37px;
+                color: #4cc9f0">
+                <strong>Lab 4 - Find Optimal result Base on GA</strong>
+            </h1>
+        </header>
+
+        <div class="row">
+            <div class="card col s4 offset-s4 ">
+                <div class="card-panel">
+                    <form action="@routes.HomeController.WFController()" method="GET">
+                        <div class="row">
+                            <button id="api-search-button" style="color: #4cc9f0; background: #031628;" class="btn col s4 offset-s4" type="submit">Find Best</button>
+                        </div>
+                    </form>
+                    <form action="@routes.HomeController.AllWFController()" method="GET">
+                        <div class="row">
+                            <button id="api-search-button" style="color: #4cc9f0; background: #031628;" class="btn col s4 offset-s4" type="submit">Show All</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
+
+    <!--<script>
+                $(document).ready(function (){
+                    $('#load_csv').click(function(){
+                        $.ajax({
+                            url:"baseFVDataSet.csv",
+                            dataType:"text",
+                            success:function (data){
+                                var workflow_data = data.split(/\r?\n|\r/);
+                                var table_data = '<table class="table table-bordered table-striped">';
+                                for (var count = 0;count < workflow_data.length;count++){
+                                    var cell_data = workflow_data[count].split(",");
+                                    table_data += '<tr>';
+                                    for(var cell_count = 0;cell_count < cell_data.length;cell_count++){
+                                        if(count === 0){
+                                            table_data += '<th>'+cell_data[cell_count]+'</th>';
+                                        }else{
+                                            table_data += '<td>'+cell_data[cell_count]+'</td>';
+                                        }
+                                    }
+                                    table_data += '</tr>';
+                                }
+                                table_data += '</table>';
+                                $('workflowTable').html(table_data);
+                            }
+                        })
+                    });
+                });
+        </script>-->

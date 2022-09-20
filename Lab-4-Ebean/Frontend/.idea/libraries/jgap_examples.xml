@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jgap-examples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jgap-examples.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

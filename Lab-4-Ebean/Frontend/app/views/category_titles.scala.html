@@ -1,0 +1,118 @@
+@import play.api.libs.json.Json
+@import scala.collection.JavaConverters._
+@(titles: List[String])
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Play Setup Demo</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    </head>
+    <body>
+        <header class="topbar">
+            <h1 class="focused" style="font-size: 37px;
+                color: #4cc9f0">
+                <strong>Paper Titles</strong>
+            </h1>
+            <details>
+                Simply copy desired selection in input box
+            </details>
+        </header>
+
+        <div class="row">
+            <div class="card col s4 offset-s4 ">
+                <div class="card-panel">
+                    <form action="@routes.HomeController.outputMetadata()" method="GET">
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="title" name="title" type="text" class="validate">
+                                <label for="title">Paper Title</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button id="api-search-button" style="color: #4cc9f0; background: #031628;" class="btn col s4 offset-s4" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <style>
+                table {
+                    margin: 0 auto;
+                    text-align: center;
+                    border-collapse: collapse;
+                    border: 1px solid #d4d4d4;
+                    height: 500px;
+                }
+
+                tr:nth-child(even) {
+                    background: #d4d4d4;
+                }
+
+                th, td {
+                    padding: 10px 30px;
+                }
+
+                th {
+                    border-bottom: 1px solid #d4d4d4;
+                }
+        </style>
+            <table id="fetch2" border="2" cellspacing="1" cellpadding="8" class="table">
+
+                <tr>
+
+                    <th>Articles</th>
+
+                </tr>
+
+                <script type="text/javascript">
+
+                        //array to table
+                        //element = "Y||X||Z"
+                            data= @Html(titles.toString());
+                                fetch2 = document.getElementById('fetch2');
+                            element= JSON.stringify(data);
+
+                            element = element.substring(2);
+                            element = element.substring(0, element.length - 2)
+                            array2 = element.split("||");
+
+                            alert(element);
+                            alert(array2.length);
+                            alert(array2);
+
+
+
+                            for(var i=0; i <array2.length; i++){
+
+
+
+                                var newRow = fetch2.insertRow(fetch2.length);
+
+                                var cell = newRow.insertCell(0);
+
+                                cell.innerHTML = array2[i].concat('.');
+
+                            }
+
+
+
+                </script>
+
+        </body>
+</html>

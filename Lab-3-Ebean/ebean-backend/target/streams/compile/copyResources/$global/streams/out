@@ -1,0 +1,7 @@
+[debug] Copy resource mappings: 
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\application.conf,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\application.conf)
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\evolutions,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\evolutions)
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\logback.xml,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\logback.xml)
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\routes,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\routes)
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\evolutions\default,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\evolutions\default)
+[debug] 	(C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\conf\evolutions\default\1.sql,C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\ebean-backend\target\scala-2.11\classes\evolutions\default\1.sql)

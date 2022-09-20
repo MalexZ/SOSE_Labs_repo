@@ -1,0 +1,4 @@
+[error] C:\Users\ZDreamer\Documents\GitHub\LabsRepo\Labs3Repo\Lab-3-Ebean\Frontend\app\views\category_titles.scala.html:113: Expected ending '}'
+[error] </html>
+[error]        ^
+[error] (compile:twirlCompileTemplates) Twirl compilation failed

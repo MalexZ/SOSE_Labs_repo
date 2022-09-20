@@ -1,0 +1,80 @@
+@(authorizeMessage: String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Lab 2 - SOSE Publication Recommendation Services
+        </title>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    </head>
+    <body>
+
+        <header class="topbar">
+            <h1 class="focused" style="font-size: 37px;
+                color: #4cc9f0">
+                <strong>Lab 2 - SOSE Publication Recommendation Services</strong>
+            </h1>
+        </header>
+
+
+        <div class="row">
+            <div class="card col s4 offset-s4 ">
+                <div class="card-panel">
+                    <form>
+                        <button title="1.1 Given a paper name (i.e., title), list its publication metadata."
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">1.1</button>
+                        <button title="1.2 Given a journal name and a year (volume) and an issue (number), find out the metadata of all the papers published in the book (means the volume+number of the journal)."
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">1.2</button>
+                        <button title="1.3 Display the titles of the articles published by a researcher in a specific year;"
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">1.3</button>
+                        <button title="1.4 Display all the authors who have published more than 10 papers in the area of SOSE to date (Hint: Since I manually extracted all SOSE papers to you in this sub-dataset, these papers included mean all the SOSE papers to date)."
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">1.4</button>
+                        <button title="2.1 Given a researcher's name and a year, list all published articles' metadata;"
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">2.1</button>
+                        <button title="2.2 For the productive authors (e.g., published more than 10 papers) in the area of SOSE, list all of their co-authors;"
+                        formaction="@routes.HomeController.signup()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;">2.2</button>
+                        <button title="Given a conference name, and a range of years (between 2003-2020)(or same year for 1.5), mark the locations of where the conference was held in a map.
+                        " formaction="@routes.HomeController.locationRequestForm()" style="display: block;
+                            align-items: center;
+                            justify-content: space-around;
+                            background: #031628;
+                            color: #4cc9f0;"> 1.5 & 2.3 </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

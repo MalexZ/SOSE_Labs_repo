@@ -1,0 +1,156 @@
+@(authorizeMessage: String)
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Lab 3 - LDA Categories
+        </title>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+            <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    </head>
+    <body>
+
+        <header class="topbar">
+            <h1 class="focused" style="font-size: 37px;
+                color: #4cc9f0">
+                <strong>Lab 3 - LDA Categories</strong>
+            </h1>
+        </header>
+
+        <style>
+                table {
+                    margin: 0 auto;
+                    text-align: center;
+                    border-collapse: collapse;
+                    border: 1px solid #d4d4d4;
+                    height: 500px;
+                }
+
+                tr:nth-child(even) {
+                    background: #d4d4d4;
+                }
+
+                th, td {
+                    padding: 10px 30px;
+                }
+
+                th {
+                    border-bottom: 1px solid #d4d4d4;
+                }
+        </style>
+
+        <!-- Table bellow -->
+
+        <table id="fetch" border="2" cellspacing="1" cellpadding="8" class="table">
+
+            <tr>
+
+                <th>Categories</th>
+
+                <th>Total</th>
+
+            </tr>
+
+            <script type="text/javascript">
+                    var array = [
+                        [0,54],
+                        [1,132],
+                        [2,101],
+                        [3,62],
+                        [4,38],
+                        [5,83],
+                        [6,71],
+                        [7,152],
+                        [8,96],
+                        [9,94],
+                        [10,55],
+                        [11,60],
+                        [12,57],
+                        [13,52],
+                        [14,86],
+                        [15,51],
+                        [16,113],
+                        [17,66],
+                        [18,82],
+                        [19,55],
+                        [20,53],
+                        [21,75],
+                        [22,132],
+                        [23,72],
+                        [24,102],
+                        [25,31],
+                        [26,76],
+                        [27,37],
+                        [28,126],
+                        [29,21],
+                        [30,69],
+                        [31,85],
+                        [32,139],
+                        [33,50],
+                        [34,133],
+                        [35,29],
+                        [36,135],
+                        [37,54],
+                        [38,80],
+                        [39,86],
+                        [40,62],
+                        [41,53],
+                        [42,41],
+                        [43,75],
+                        [44,65],
+                        [45,48],
+                        [46,139],
+                        [47,118],
+                        [48,57],
+                        [49,54]];
+
+                    //array to table
+
+
+                    fetch = document.getElementById('fetch');
+
+                    for(var i=0; i <array.length; i++){
+
+                        var newRow = fetch.insertRow(fetch.length);
+
+                        for(var j=0; j<array[i].length; j++){
+
+                            var cell = newRow.insertCell(j);
+
+                            cell.innerHTML = array[i][j];
+
+                        }
+
+                    }
+
+            </script>
+        </table>
+        <div class="row">
+            <div class="card col s4 offset-s4 ">
+                <div class="card-panel">
+                    <form action="@routes.HomeController.findCategoryArticles()" method="GET">
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="category" name="category" type="text" class="validate">
+                                <label for="category">category #</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button id="api-search-button" style="color: #4cc9f0; background: #031628;" class="btn col s4 offset-s4" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
